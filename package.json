@@ -1,0 +1,14 @@
+{
+  "name": "nononick-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NONONICK AI - agent orchestrator with provider failover and approval-gated deployment",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test test/*.test.js",
+    "scan": "node scripts/scan-secrets.js",
+    "hooks": "git config core.hooksPath .githooks",
+    "build": "node --check server/index.js && node --check server/router.js && node --check server/orchestrator.js && node --check public/app.js"
+  }
+}
